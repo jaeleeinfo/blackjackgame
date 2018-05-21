@@ -4,22 +4,22 @@
 // PluralSight JavaScript Class Tutorial
 
 // Card variables
-let suits = ['Hearts', 'Clubs', 'Diamonds', 'Spades'];
-let values = [
-	'Ace',
-	'King',
-	'Queen',
-	'Jack',
-	'Ten',
-	'Nine',
-	'Eight',
-	'Seven',
-	'Six',
-	'Five',
-	'Four',
-	'Three',
-	'Two'
-];
+let suits = ['Hearts', 'Clubs', 'Diamonds', 'Spades'],
+	values = [
+		'Ace',
+		'King',
+		'Queen',
+		'Jack',
+		'Ten',
+		'Nine',
+		'Eight',
+		'Seven',
+		'Six',
+		'Five',
+		'Four',
+		'Three',
+		'Two'
+	];
 
 // DOM variables
 let textArea = document.getElementById('text-area'),
@@ -44,13 +44,13 @@ showStatus();
 // this is called everytime user calls a new game
 newGameButton.addEventListener('click', function() {
 	gameStarted = true;
-	gameover = false;
+	gameOver = false;
 	playerWon = false;
 
 	deck = createDeck(); // dealer and player starts with two cards
 	shuffleDeck(deck);
 	dealerCards = [getNextCard(), getNextCard()];
-	playercards = [getNextCard(), getNextCard()];
+	playerCards = [getNextCard(), getNextCard()];
 
 	newGameButton.style.display = 'none';
 	hitButton.style.display = 'inline';
@@ -203,12 +203,12 @@ function showStatus() {
 	updateScores();
 
 	textArea.innerText =
-		'Dealer has: \n' +
+		'Dealer has:\n' +
 		dealerCardString +
 		'(score: ' +
 		dealerScore +
 		')\n\n' +
-		'Player has: \n' +
+		'Player has:\n' +
 		playerCardString +
 		'(score: ' +
 		playerScore +
